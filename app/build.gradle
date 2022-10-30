@@ -1,0 +1,125 @@
+
+/*
+ *     Copyright (c) 2022  Aditya Bavadekar
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ */
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.android.gms.oss-licenses-plugin'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion Versions.COMPILE_SDK
+    buildToolsVersion Versions.BUILD_TOOLS_VERSION
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+    defaultConfig {
+        applicationId "com.adityaamolbavadekar.metube"
+        minSdkVersion Versions.MIN_SDK
+        targetSdkVersion Versions.TARGET_SDK
+        versionCode Versions.VERSION_CODE
+        versionName Versions.VERSION_NAME
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "DATE", "\"${new Date()}\""
+        buildConfigField "Long", "TIMESTAMP", "Long.parseLong(\"${System.currentTimeMillis()}\")"
+
+    }
+
+    signingConfigs {
+        releaseConfig {
+            keyAlias = properties.getProperty("KEY_ALIAS")
+            keyPassword = properties.getProperty("KEY_PASSWORD")
+            storePassword = properties.getProperty("STORE_PASSWORD")
+            if (properties.getProperty("STORE_FILE") != null) {
+                storeFile = file(properties.getProperty("STORE_FILE"))
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+
+        variant.outputs.each { output ->
+            output.outputFileName = output.outputFileName.replace(".apk", "-${variant.versionName}.apk")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation(Dependencies.KOTLIN)
+    implementation(Dependencies.ANDROIDX_CORE)
+    implementation(Dependencies.ANDROIDX_APPCOMPAT)
+    implementation Dependencies.ACTIVITY_KTX
+    implementation Dependencies.CONSTRAINT_LAYOUT
+    implementation Dependencies.EMOJI2
+    implementation platform(Dependencies.FIREBASE_BOM)
+    implementation Dependencies.FIREBASE_AUTH
+    implementation Dependencies.FIREBASE_DATABASE
+    implementation Dependencies.FIREBASE_STORAGE
+    implementation Dependencies.FIREBASE_MESSAGING
+    implementation Dependencies.FRAGMENT_KTX
+    implementation Dependencies.GLIDE
+    kapt Dependencies.GLIDE_COMPILER
+    implementation Dependencies.JSOUP
+    implementation Dependencies.KOTLIN
+    implementation Dependencies.LIBPHONENUMBER
+    implementation Dependencies.LIFECYCLE_EXT
+    implementation Dependencies.LIFECYCLE_VIEWMODEL
+    implementation Dependencies.LOTTIE
+    implementation Dependencies.MATERIAL
+    implementation Dependencies.NAVIGATION_FRAGMENT
+    implementation Dependencies.NAVIGATION_UI
+    implementation Dependencies.PAGING
+    implementation Dependencies.PHOTOVIEW
+    implementation Dependencies.PINLOG
+    debugImplementation Dependencies.PINLOG_ACTIVITY
+    implementation Dependencies.PLAY_SERVICES_AUTH
+    implementation Dependencies.PLAY_SERVICES_SAFETY_NET
+    implementation Dependencies.PREFERENCE
+    implementation Dependencies.RECYCLER_VIEW
+    implementation Dependencies.RECYCLER_VIEW_SELECTION
+    implementation Dependencies.RETROFIT
+    implementation Dependencies.RETROFIT_CONVERTER_GSON
+    kapt Dependencies.ROOM_COMPILER
+    implementation Dependencies.ROOM_RUNTIME
+    implementation Dependencies.ROOM_KTX
+
+}
