@@ -5,7 +5,7 @@ data class PostStats(
     var likedBy: List<String> = emptyList()
 ) {
 
-    fun getViewCount() = viewedBy.size.toLong()
-    fun getLikeCount() = likedBy.size.toLong()
+    fun getViewCount() = viewedBy.size
+    fun getLikeCount() = likedBy.size
 
 }

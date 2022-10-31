@@ -35,6 +35,7 @@ object Libs {
     const val GLIDE = "com.github.bumptech.glide:glide"
     const val GLIDE_COMPILER = "com.github.bumptech.glide:compiler"
     const val JSOUP = "org.jsoup:jsoup"
+    const val JUNIT = "junit:junit"
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib"
     const val LIBPHONENUMBER = "com.googlecode.libphonenumber:libphonenumber"
     const val LIFECYCLE_EXT = "androidx.lifecycle:lifecycle-extensions"

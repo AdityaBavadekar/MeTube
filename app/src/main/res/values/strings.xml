@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MeTube</string>
+    <string name="welcome_to_app">Welcome to MeTube</string>
+
+    <string name="Post_likes_count">%1d likes</string>
+    <string name="Post_timestamp_edited">Edited %1s</string>
+    <string name="home">Home</string>
+
 </resources>

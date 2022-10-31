@@ -43,6 +43,7 @@ object Versions {
     const val FRAGMENT_KTX = "1.4.0"
     const val GLIDE = "4.12.0"
     const val JSOUP = "1.11.3"
+    const val JUNIT = "4.13.2"
     const val KOTLIN = PLUGIN_KOTLIN_GRADLE
     const val LIBPHONENUMBER = "8.12.52"
     const val LIFECYCLE_EXT = "2.2.0"

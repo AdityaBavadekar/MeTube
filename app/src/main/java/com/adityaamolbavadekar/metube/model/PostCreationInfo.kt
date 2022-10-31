@@ -7,6 +7,10 @@ data class PostCreationInfo(
     var lastUpdated: Long = created
 ) {
 
+    fun wasEdited(): Boolean {
+        return lastUpdated != created
+    }
+
     fun setLastUpdatedToNow() {
         lastUpdated = DateUtils.now()
     }

@@ -1,10 +1,57 @@
 <resources>
+
+    <style name="MeTube.NoActionBar" parent="MeTube.Base">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MeTube" parent="MeTube.Base" />
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="MeTube.Base" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@color/LightColorPrimary</item>
+        <item name="colorPrimaryDark">@color/LightColorPrimaryDark</item>
+        <item name="colorAccent">@color/LightColorAccent</item>
+        <item name="titleTextAppearance">@style/MeTube.TitleTextAppearance</item>
+
+        <item name="colorControlNormal">@color/colorBlack</item>
+        <item name="android:colorControlNormal">@color/colorBlack</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorBlack</item>
+
+        <!--Widget Styles-->
+        <item name="bottomNavigationStyle">@style/MeTube.Widget.BottomNavigationView</item>
+        <item name="appBarLayoutStyle">@style/MeTube.Widget.AppBar</item>
+        <item name="toolbarStyle">@style/MeTube.Widget.Toolbar</item>
+
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+
+    </style>
+
+    <!--Widgets-->
+    <style name="MeTube.Widget.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="backgroundTint">?attr/colorSurface</item>
+        <item name="elevation">0dp</item>
+        <item name="itemBackground">?attr/colorSurface</item>
+        <item name="itemIconTint">?attr/colorOnSurface</item>
+        <item name="itemTextColor">?attr/colorOnSurface</item>
+        <item name="itemPaddingTop">8dp</item>
+        <item name="itemPaddingBottom">12dp</item>
+        <item name="android:minHeight">70dp</item>
+    </style>
+
+    <style name="MeTube.Widget.AppBar" parent="Widget.MaterialComponents.AppBarLayout.Surface" />
+
+    <style name="MeTube.Widget.Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
+        <item name="android:minHeight">70dp</item>
+    </style>
+
+    <style name="MeTube.TitleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?colorOnSurface</item>
     </style>
 
 </resources>

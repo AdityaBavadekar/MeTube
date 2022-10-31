@@ -8,8 +8,7 @@ data class AuthorInfo(
     var authorDisplayName: String? = null,
     var authorPhone: String? = null,
     var authorEmail: String? = null,
-    var authorProfileUrl: String? = null,
-    var authorProfileImageUrl: String? = null,
+    var authorProfilePicture: ProfilePicture = ProfilePicture(),
     var authorDeleted: Boolean = false,
     var verified: Boolean = false,
 ) : NotNullCheckable {
@@ -17,4 +16,5 @@ data class AuthorInfo(
     override fun onShouldProvideCheckNotNullData(): Array<out Any?> {
         return arrayOf(authorUserId, authorUsername)
     }
+    
 }

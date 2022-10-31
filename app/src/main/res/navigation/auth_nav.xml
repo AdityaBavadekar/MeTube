@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/onboardingFragment">
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.adityaamolbavadekar.metube.ui.auth.welcome.OnboardingFragment"
+        android:label="OnboardingFragment"
+        tools:layout="@layout/auth_onboarding_fragment" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.adityaamolbavadekar.metube.ui.auth.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.adityaamolbavadekar.metube.ui.auth.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/signup_fragment" />
+</navigation>

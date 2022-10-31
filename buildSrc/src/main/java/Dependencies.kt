@@ -34,6 +34,7 @@ object Dependencies {
     const val GLIDE = Libs.GLIDE + ":" + Versions.GLIDE
     const val GLIDE_COMPILER = Libs.GLIDE + ":" + Versions.GLIDE
     const val JSOUP = Libs.JSOUP + ":" + Versions.JSOUP
+    const val JUNIT = Libs.JUNIT + ":" + Versions.JUNIT
     const val KOTLIN = Libs.KOTLIN + ":" + Versions.KOTLIN
     const val LIBPHONENUMBER = Libs.LIBPHONENUMBER + ":" + Versions.LIBPHONENUMBER
     const val LIFECYCLE_EXT = Libs.LIFECYCLE_EXT + ":" + Versions.LIFECYCLE_EXT

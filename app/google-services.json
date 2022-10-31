@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "107101215141",
+    "firebase_url": "https://gonotesapp-default-rtdb.firebaseio.com",
+    "project_id": "gonotesapp",
+    "storage_bucket": "gonotesapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107101215141:android:a5b173f855dcc7b61ef04c",
+        "android_client_info": {
+          "package_name": "com.adityaamolbavadekar.metube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107101215141-dq8kpm6lrf06e2i14op7jla7mde8cp8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgXEvJM8ZQDRxEcm7TOHuHAW3el5UwRsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107101215141-dq8kpm6lrf06e2i14op7jla7mde8cp8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
