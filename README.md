@@ -2,6 +2,8 @@
 # MeTube
 My Description
 
+![](/Screenshot_20221031-222855_MeTube.jpg)
+
 ## Development status
 - Application development is in progress for v0.0.1
 - Any version increments would be reflected in github's releases section.
